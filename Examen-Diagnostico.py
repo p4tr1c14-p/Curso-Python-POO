@@ -33,7 +33,8 @@ def generar() -> list:
     while nombre_uno == nombre_dos:
         nombre_dos = random.choice(alumnos)
 
-    return [nombre_uno, nombre_dos]
+    regresar = [nombre_uno, nombre_dos]
+    return regresar
 
 def verificar() -> list:
     while True:

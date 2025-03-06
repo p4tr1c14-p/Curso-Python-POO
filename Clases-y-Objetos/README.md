@@ -1,1 +1,4 @@
-#1- Persona 
+
+
+# Persona 
+# Atributos de instancia

@@ -7,58 +7,47 @@ class Estudiante:
         self.temas_aprendidos.append(tema)
         print(f"{self.nombre} aprendió {tema}")
 
+    def __str__(self) -> str:
+        return f"Estudiante (nombre: {self.nombre}, temas_aprendidos: {self.temas_aprendidos})"
+
 
 class Profesor:
-    def __init__(self, nombre: str):
+    def __init__(self, nombre: str, temas_dominados: list[str]):
         self.nombre = nombre
         self.temas_dominados = []
+
+
 
     def dominar_tema(self, tema: str):
         self.temas_dominados.append(tema)
         print(f"{self.nombre} domina el tema {tema}")
 
     def ensenar_tema(self, no_tema: int) -> str:
-        if 0 <= no_tema < len(self.temas_dominados):
-            tema = self.temas_dominados[no_tema]
-            print(f"{self.nombre} enseñará el tema {tema}")
-            return tema
+        if no_tema > len(self.temas_dominados):
+            return self.temas_dominados[no_tema]
         else:
-            print(f"Error: El profesor {self.nombre} no tiene un tema con el índice {no_tema}")
+            return "Fuera de rango"
+
+
+
+    def __str__(self) -> str:
+        return f"Estudiante (nombre: {self.nombre}, temas_aprendidos: {self.temas_dominados})"
+
 
 
 if __name__ == "__main__":
-    nombre_profesor = input("Ingrese el nombre del profesor: ")
-    profesor = Profesor(nombre_profesor)
 
-    print("\nIngrese los temas que domina el profesor (escriba 'fin' para terminar):")
-    while True:
-        tema = input("Tema: ")
-        if tema.lower() == 'fin':
-            break
-        profesor.dominar_tema(tema)
+    estudiante1 = Estudiante("Loopy")
+    estudiante2 = Estudiante("Lusi")
 
-    print("\nTemas dominados por el profesor:")
-    for i, tema in enumerate(profesor.temas_dominados):
-        print(f"{i}: {tema}")
+    profesor1 = Profesor("Alberto")
 
-    nombre_estudiante = input("\nIngrese el nombre del estudiante: ")
-    estudiante = Estudiante(nombre_estudiante)
+    estudiante1.aprender_tema("Evolución sitios web")
+    estudiante2.aprender_tema("IoT")
 
-    print("Selección de temas para enseñar:")
-    while True:
-        indice_str = input("\nIngrese el índice del tema a enseñar (o 'fin' para terminar): ")
+    profesor1.temas_dominados = ("Paradigmas de programación")
 
-        if indice_str.lower() == 'fin':
-            break
+    print(estudiante1)
+    print(estudiante2)
 
-        indice = int(indice_str)
-        tema = profesor.ensenar_tema(indice)
-        estudiante.aprender_tema(tema)
-
-
-    print(f"Temas aprendidos por {estudiante.nombre}:")
-    if estudiante.temas_aprendidos:
-        for tema in estudiante.temas_aprendidos:
-            print(f"- {tema}")
-    else:
-        print("El estudiante no ha aprendido ningún temaa")
+    print(profesor1)

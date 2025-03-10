@@ -31,7 +31,7 @@ class Profesor:
 
 
     def __str__(self) -> str:
-        return f"Estudiante (nombre: {self.nombre}, temas_aprendidos: {self.temas_dominados})"
+        return f"Profesor (nombre: {self.nombre}, temas_aprendidos: {self.temas_dominados})"
 
 
 
@@ -40,12 +40,13 @@ if __name__ == "__main__":
     estudiante1 = Estudiante("Loopy")
     estudiante2 = Estudiante("Lusi")
 
-    profesor1 = Profesor("Alberto")
+
+    profesor1 = Profesor("Alberto", ["Paradigmas de programación"])
 
     estudiante1.aprender_tema("Evolución sitios web")
     estudiante2.aprender_tema("IoT")
 
-    profesor1.temas_dominados = ("Paradigmas de programación")
+    profesor1.dominar_tema("Paradigmas de programación")
 
     print(estudiante1)
     print(estudiante2)

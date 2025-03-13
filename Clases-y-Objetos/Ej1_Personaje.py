@@ -22,7 +22,7 @@ class Personaje:
     # Atributo de clase. En este caso, se utiliza para generar ID de los empleados.
     contador_id = 1
 
-    def __init__(self, x: int, y: int):
+    def __init__(self):
         """
         Constructor de mi personaje.
         :param x: X.
@@ -30,8 +30,8 @@ class Personaje:
         """
 
         # Atributos de instancia.
-        self.x = x
-        self.y = y
+        self.x = 0
+        self.y = 0
 
         # Se asigna el atributo de clase como atributo de instancia y luego se incrementa.
         # Nota: Para utilizar los atributos de clase, se utiliza el nombre de la clase seguido de un punto
@@ -45,38 +45,47 @@ class Personaje:
         Se utiliza para aumentar el sueldo de acuerdo con un porcentaje.
         :param ordenes: Se usa para saber qué hacer.
         """
-        pass
+        for orden in ordenes:
+            if orden in ['A', 'a'] and self.y < 10:
+                self.y += 1
+            elif orden in ['R', 'r'] and self.y > 0:
+                self.y -= 1
+            elif orden in ['D', 'd'] and self.x < 10:
+                self.x += 1
+            elif orden in ['I', 'i'] and self.x > 0:
+                self.x -= 1
 
-    def posicion_actual(self, x: int, y: int) -> None:
-        pass
+    def posicion_actual(self) -> None:
+        print(f"Personaje {self.id} en posición: ({self.x}, {self.y})")
 
     def __str__(self) -> str:
         """
         Se utiliza para definir la representación en cadena de mi personaje.
         :return: El objeto en forma de cadena.
         """
-        return f"Empleado(id: {self.contador_id}, Posición x: {self.x}, Posición y: {self.y})"
-
+        return f"Personaje {self.id} en ({self.x}, {self.y})"
 
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":
-    # Ejemplo de uso de los atributos de clase.
-    print("  -- Ejemplo de uso de los atributos de clase.")
+    # Crear un personaje
+    personaje = Personaje()
+    print("Personaje creado en el origen (0, 0)")
+    print("Movimientos válidos: A (avanzar y), R (retroceder y), D (derecha x), I (izquierda x)")
+    print("Ingrese 'S' para salir")
 
-    # Forma de acceder al atributo de clase.
-    print(f"Personaje (id: {Personaje.contador_id }, x: {Personaje(x=)}, y: {Personaje(y=)})")
+    while True:
+        secuencia = input("Ingresa tus movimientos: ")
+        movimiento = secuencia.lower()
+        if 'S' in secuencia or 's' in secuencia:
+            print("Fin del programa")
+            break
+        elif movimiento.isnumeric():
+            print("Ingrese un valor válido porfii")
+            print("Movimientos válidos: A (avanzar y), R (retroceder y), D (derecha x), I (izquierda x) \n")
 
+        # Realizar movimientos
+        personaje.moverse(secuencia)
 
-    # Se crean varios objetos de mi clase Personaje y se imprimen en consola.
-    mi_personaje = Personaje(0, 0)
-    dos = Personaje(9, 8)
-
-
-    print()
-    print("Se crea mi personaje 😎:")
-    print(mi_personaje)
-
-    # Se muestra nuevamente el atributo de clase.
-    print()
-    print(f"Atributo de clase: {Personaje.contador_id = }")
+        # Mostrar posición final
+        personaje.posicion_actual()

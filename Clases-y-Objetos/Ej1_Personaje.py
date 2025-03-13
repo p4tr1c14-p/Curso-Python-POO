@@ -1,6 +1,6 @@
 """
 Nombre: Patricia Pérez Cruz
-Fecha:
+Fecha: 13 de marzo de 2025
 Descripción:
 Ejemplo de uso de los atributos de clase.
 
@@ -13,39 +13,20 @@ entre todas las instancias de la clase.
 
 """ %%%%%%%     Clase    %%%%%%%%%%%%%%%%%%%%% """
 class Personaje:
-    """
-    Clase que representa a un empleado.
-    Sus atributos son: no_id (atributo de clase), nombre y sueldo.
-    Sus métodos son: __init__(), __str__(), aumentar_sueldo().
-    """
-
-    # Atributo de clase. En este caso, se utiliza para generar ID de los empleados.
     contador_id = 1
 
     def __init__(self):
-        """
-        Constructor de mi personaje.
-        :param x: X.
-        :param y: y.
-        """
 
-        # Atributos de instancia.
+        #Atributos de instancia.
         self.x = 0
         self.y = 0
 
-        # Se asigna el atributo de clase como atributo de instancia y luego se incrementa.
-        # Nota: Para utilizar los atributos de clase, se utiliza el nombre de la clase seguido de un punto
-        # y el nombre del atributo.
         self.id = Personaje.contador_id
         Personaje.contador_id += 1
 
 
-    def moverse(self, ordenes: str) -> None:
-        """
-        Se utiliza para aumentar el sueldo de acuerdo con un porcentaje.
-        :param ordenes: Se usa para saber qué hacer.
-        """
-        for orden in ordenes:
+    def moverse(self, recibido: str) -> None:
+        for orden in recibido:
             if orden in ['A', 'a'] and self.y < 10:
                 self.y += 1
             elif orden in ['R', 'r'] and self.y > 0:
@@ -56,7 +37,7 @@ class Personaje:
                 self.x -= 1
 
     def posicion_actual(self) -> None:
-        print(f"Personaje {self.id} en posición: ({self.x}, {self.y})")
+        print(f"Personaje {self.id} en posición x:({self.x}, y: {self.y})")
 
     def __str__(self) -> str:
         """
@@ -68,7 +49,7 @@ class Personaje:
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":
-    # Crear un personaje
+    # Crear un personaje además de que pongo un cartel para que el usuario pueda saber como moverse
     personaje = Personaje()
     print("Personaje creado en el origen (0, 0)")
     print("Movimientos válidos: A (avanzar y), R (retroceder y), D (derecha x), I (izquierda x)")
@@ -81,7 +62,7 @@ if __name__ == "__main__":
             print("Fin del programa")
             break
         elif movimiento.isnumeric():
-            print("Ingrese un valor válido porfii")
+            print("Ingrese un valor válido porfi")
             print("Movimientos válidos: A (avanzar y), R (retroceder y), D (derecha x), I (izquierda x) \n")
 
         # Realizar movimientos

@@ -13,5 +13,5 @@ Worked Example
 # "+" against a "+" returns another "+".
 # "-" against a "-" returns another "-".
 # "+" against a "-" returns "0".
-# Return the string of characters.
+# Return the string of characters
 """

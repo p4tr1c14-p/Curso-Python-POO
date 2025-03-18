@@ -3,7 +3,7 @@ Nombre: Patricia Pérez Cruz
 Descripción:
 Task 8 kyu
 Create a function that always returns True/true for every item in a given list.
-However, if an element is the word 'flick', switch to always returning the opposite boolean value.
+However, if an element is the word 'flick', switch to always returning the opposite boolean value
 
 Examples
 ['codewars', 'flick', 'code', 'wars'] ➞ [True, False, False, False]

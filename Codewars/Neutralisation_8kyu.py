@@ -15,3 +15,23 @@ Worked Example
 # "+" against a "-" returns "0".
 # Return the string of characters
 """
+
+def cadenas(signo_uno, signo_dos):
+    resultado = []
+
+    for i in signo_uno :
+        for a in signo_dos:
+            if signo_uno[cont] == '+' or signo_uno[i] == '-' and signo_dos[a] == '+' or signo_dos[a] == '-':
+                resultado.append(i)
+            else:
+                resultado.append(0)
+    return resultado
+
+
+cad1 = input("Ingrese una: ")
+cad2 = input("Ingrese otra: ")
+
+
+cadenas(cad1, cad2)
+
+#print(cadenas(["-","+", "+", "-"], ["-","+","-", "+"]))

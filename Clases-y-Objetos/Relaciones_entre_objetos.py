@@ -53,10 +53,13 @@ class Empresa:
 if __name__ == '__main__':
     sofia = Empleado("Sofi", 120)
     lusi = Empleado("Lusi", 1000)
-
+    print(lusi)
     unsij = Empresa("UNSIJ")
     unsij.agregar_empleados(lusi, sofia)
 
+    lusi.nombre = "Zhao Lusi"
     print(unsij)
     print(sofia)
     print(lusi)
+
+    print(lusi.nombre )

@@ -9,6 +9,14 @@ class CuentaBancaria:
     def retirar(self, cantidad: float) -> None:
         pass
 
+    @property
+    def saldo(self) -> float:
+        return self._saldo
+
+    @saldo.setter
+    def saldo(self, nuevo_saldo: float) -> None:
+        self._saldo = nuevo_saldo
+
     def __str__(self) -> str:
         return  f"CuentaBancaria(titular: {self.titular}, saldo: {self._saldo:,.2f})"
 
@@ -16,11 +24,5 @@ if __name__ == '__main__':
         cuenta_lusi = CuentaBancaria("Lusi")
         print(cuenta_lusi)
 
-        @property
-        def saldo(self) -> float:
-            return self._saldo
 
-        @ saldo.setter
-        def saldo(self, nuevo_saldo:float) -> None:
-            self._saldo = nuevo_saldo
 

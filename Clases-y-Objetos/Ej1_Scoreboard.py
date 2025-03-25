@@ -9,6 +9,37 @@ class Scoreboard:
     def __str__(self):
         return f"Scoreboard (point={self._points}, size= {self._size}, font= {self._font}, text_color= {self._text_color})"
 
+    @property #getter obtengo el valor de self._points
+    def points(self) -> int:
+        return self._points
+
+    @points.setter
+    def points(self, points: int) -> None: #setter
+        self._points = points
+
+    @property
+    def font(self) -> str:
+        return  self._font
+
+    @font.setter
+    def font(self, font: str) -> None:
+        self._font = font
+
+    @property
+    def text_color(self) -> tuple: #PREGUNTA
+        return self._text_color
+
+    @text_color.setter
+    def text_color(self, text_color: tuple) -> None: #PREGUNTA
+        self._text_color = text_color
+
+    @property
+    def size(self) -> float:
+        return self._size
+
+    @size.setter
+    def size(self, size: float) -> None:
+        self._size = size
 
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
@@ -28,5 +59,5 @@ if __name__ == "__main__":
 
     print()
     print("Se prueba el método draw() en ambos objetos:")
-    marcador1.draw()
-    marcador2.draw()
+    #marcador1.draw()
+    #marcador2.draw()

@@ -1,6 +1,38 @@
 from Ej1_Scoreboard import Scoreboard
 
+class Window:
+    def __init__(self, text : str, width: int, heigth: int, scoreboard: Scoreboard = Scoreboard()):
+        self._text = text
+        self._width = width
+        self._heigth = heigth
+        self._scoreboard = scoreboard
 
+    def update(self, points : int):
+        self._scoreboard.points = points
+
+    @property
+    def text(self) -> str:
+        return self.text
+
+    @text.setter
+    def text(self, text: str) -> None:
+        self.text = text
+
+    @property
+    def width(self) -> int:
+        return self.width
+
+    @width.setter
+    def width(self, width: int):
+        self.width = width
+
+    @property
+    def heigth(self) -> int:
+        return self.heigth
+
+    @heigth.setter
+    def heigth(self, heigth: int):
+        self.heigth = heigth
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 
-from Ej1_Scoreboard import Scoreboard
+from Ej1_Scoreboard import Scoreboard #Aquí importe a la clase Scoreboard porque la iba a ocupar en este programa
 
 class Window:
     def __init__(self, text : str, width: int, heigth: int, scoreboard: Scoreboard = Scoreboard()):
@@ -9,11 +9,11 @@ class Window:
         self._scoreboard = scoreboard
 
 
-    @property
+    @property #Igual aquí con el getter obtengo valores
     def text(self) -> str:
         return self._text
 
-    @text.setter
+    @text.setterb #Y con esto asigno los datos
     def text(self, text: str) -> None:
         self._text = text
 
@@ -43,16 +43,16 @@ class Window:
 
 
     def draw_scoreboard(self) -> None:
-        print(f"Score: {self._scoreboard.points}")
+        print(f"Score: {self._scoreboard.points}") #Aquí accedí al scoreboard pero específicamente a los points
 
     def update_score(self, points : int) -> None:
-        self._scoreboard.points = points
+        self._scoreboard.points = points #Con esta función se podía actualizar los datos del score
         print(f"Score: {self._scoreboard.points}") #Aquí siempre tengo que acceder con punto points porque estaba accediedo pero a
         #to_do el score y no solo a puntos
 
     def __str__(self):
         return f"Windows (text={self._text}, width= {self._width}, heigth= {self._heigth}, scoreboard= {self._scoreboard})"
-
+        #El mé_to_do mágico nuncaa debe de faltar
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":
     # Se crean objetos de la clase Window sin un objeto de la clase Scoreboard creado

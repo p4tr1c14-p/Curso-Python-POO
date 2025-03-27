@@ -1,3 +1,8 @@
+"""
+Nombre: Patricia Pérez Cruz
+Descripción:
+Programa en dónde
+"""
 
 class Scoreboard:
     def __init__(self, points: int = 0, text_color: tuple[int, int, int]= (0, 0, 0), font : str = "kimono", size: float = 48):
@@ -8,12 +13,13 @@ class Scoreboard:
 
     def __str__(self):
         return f"Scoreboard (point={self._points}, size= {self._size}, font= {self._font}, text_color= {self._text_color})"
+        #Aquí agregué esto para que no me imprimiera basura, ya que sino me imprime cosas que no deben de salir
 
-    @property #getter obtengo el valor de self._points
+    @property #Getter obtengo el valor de self._points
     def points(self) -> int:
         return self._points
 
-    @points.setter
+    @points.setter #Con el setter puedo ponerle un valor a los datos
     def points(self, points: int) -> None: #setter
         self._points = points
 
@@ -51,15 +57,13 @@ if __name__ == "__main__":
 
     print()
     print("Se crea un objeto sin argumentos:")
-    marcador1 = Scoreboard()
-    print(f"marcador1 = {marcador1}")
+    marcador1 = Scoreboard() #Nombro al objeto marcador1 y llamo a la clase Scoreboard
+    print(f"marcador1 = {marcador1}") #Aquí se imprime
 
     print()
     print("Se crea otro objeto con (points, font y text_color) como argumentos por nombre:")
-    marcador2 = Scoreboard(10, font="Arial", text_color= (127, 127, 127))
-    print(f"marcador2 = {marcador2}")
+    marcador2 = Scoreboard(10, font="Arial", text_color= (127, 127, 127)) #Aquí llamo a la clase y también le asigno valores
+    print(f"marcador2 = {marcador2}") #Se imprime
 
     print()
     print("Se prueba el método draw() en ambos objetos:")
-    #marcador1.draw()
-    #marcador2.draw()

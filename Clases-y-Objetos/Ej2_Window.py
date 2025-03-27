@@ -1,3 +1,4 @@
+
 from Ej1_Scoreboard import Scoreboard
 
 class Window:
@@ -7,32 +8,50 @@ class Window:
         self._heigth = heigth
         self._scoreboard = scoreboard
 
-    def update(self, points : int):
-        self._scoreboard.points = points
 
     @property
     def text(self) -> str:
-        return self.text
+        return self._text
 
     @text.setter
     def text(self, text: str) -> None:
-        self.text = text
+        self._text = text
 
     @property
     def width(self) -> int:
-        return self.width
+        return self._width
 
     @width.setter
-    def width(self, width: int):
-        self.width = width
+    def width(self, width: int) -> None:
+        self._width = width
 
     @property
     def heigth(self) -> int:
-        return self.heigth
+        return self._heigth
 
     @heigth.setter
-    def heigth(self, heigth: int):
-        self.heigth = heigth
+    def heigth(self, heigth: int) -> None:
+        self._heigth = heigth
+
+    @property
+    def scoreboard(self) -> Scoreboard:
+        return  self._scoreboard
+
+    @scoreboard.setter
+    def scoreboard(self, scoreboard: Scoreboard) -> None:
+        self._scoreboard = scoreboard
+
+
+    def draw_scoreboard(self) -> None:
+        print(f"Score: {self._scoreboard.points}")
+
+    def update_score(self, points : int) -> None:
+        self._scoreboard.points = points
+        print(f"Score: {self._scoreboard.points}") #Aquí siempre tengo que acceder con punto points porque estaba accediedo pero a
+        #to_do el score y no solo a puntos
+
+    def __str__(self):
+        return f"Windows (text={self._text}, width= {self._width}, heigth= {self._heigth}, scoreboard= {self._scoreboard})"
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":

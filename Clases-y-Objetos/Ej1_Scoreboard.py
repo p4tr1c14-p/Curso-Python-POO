@@ -1,6 +1,6 @@
 
 class Scoreboard:
-    def __init__(self, points: int = 0, text_color: tuple[int]= (0, 0, 0), font : str = "kimono", size: float = 48):
+    def __init__(self, points: int = 0, text_color: tuple[int, int, int]= (0, 0, 0), font : str = "kimono", size: float = 48):
         self._points = points
         self._font = font
         self._text_color = text_color
@@ -41,6 +41,8 @@ class Scoreboard:
     def size(self, size: float) -> None:
         self._size = size
 
+    def draw(self):
+        print(f"Score: {self.points}")
 
 """ %%%%%%%     CÓDIGO A NIVEL DE MÓDULO    %%%%%%%%%%%%%%%%%%%%% """
 if __name__ == "__main__":

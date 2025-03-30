@@ -19,9 +19,9 @@ def flick_switch(jsjs):
     state = True
     result = []
 
-    for item in jsjs:
+    for item in jsjs: #Con un ciclo recorrí la lista para buscar si había un flick y cambiarlo por false
         if item == 'flick':
-            state = not state
+            state = not state #Con esto lo cambio a false
         result.append(state)
 
     return result

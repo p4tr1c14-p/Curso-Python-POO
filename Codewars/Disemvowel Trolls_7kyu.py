@@ -17,8 +17,8 @@ def disemvowel(string_):
     vocal = "aeiou"
     result = ""
     for i in string_:
-        if i.lower() not in vocal:
-            result += i
+        if i.lower() not in vocal: #Convierto lo que me den a minúscula y ya después reviso si lo que dieron es una vocal
+            result = result + i
     return result
 
 cadena = input("Ingrese su cadena a usar: ")

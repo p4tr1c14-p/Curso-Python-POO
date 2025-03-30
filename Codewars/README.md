@@ -23,7 +23,9 @@
 
 ## 10. Neutralisation
 
-## 11. KATAS 7 KYU
+
+
+## KATAS 7 KYU
 
 ## 11. Disemvowel trolls
 

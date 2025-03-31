@@ -13,7 +13,7 @@ class Window:
     def text(self) -> str:
         return self._text
 
-    @text.setterb #Y con esto asigno los datos
+    @text.setter #Y con esto asigno los datos
     def text(self, text: str) -> None:
         self._text = text
 

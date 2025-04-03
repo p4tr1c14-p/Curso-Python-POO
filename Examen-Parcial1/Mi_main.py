@@ -2,10 +2,9 @@ from Clase_Jugador import Jugador
 from Clase_Equipo import Equipo
 from Clase_Torneo import Torneo
 
-# Creamos el torneo
 torneo = Torneo("Champions League")
 
-# Listas para almacenar jugadores que no están asignados a equipos
+#listaa para almacenar jugadores que no están asignados a equipos
 jugadores_sin_equipo = []
 
 
@@ -15,7 +14,7 @@ def validar_entero(mensaje):
         if valor.isdigit():  # Verifica si la entrada es un número positivo
             return int(valor)
         else:
-            print("Error: Por favor ingresa un número válido.")
+            print("Error: Por favor ingresa un número válido 🧐")
 
 
 def mostrar_menu():
@@ -53,7 +52,7 @@ def main():
                 goles = validar_entero("Ingresa el número de goles: ")
                 nuevo_jugador = Jugador(nombre, numero, goles)
                 jugadores_sin_equipo.append(nuevo_jugador)
-                print(f"Jugador {nombre} creado con éxito.")
+                print(f"Jugador {nombre} creado con éxito")
 
         elif opcion == 2:
             # Crear nuevo equipo
@@ -104,7 +103,7 @@ def main():
                 equipo.mostrar_jugadores()
 
             if not jugadores_sin_equipo and not torneo._equipos:
-                print("No hay jugadores registrados.")
+                print("No hay jugadores registrados")
 
         elif opcion == 4:
             #ver la lista de mis equiposs

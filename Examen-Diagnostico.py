@@ -57,93 +57,58 @@ def main():
 if __name__ == '__main__':
     main()
 
+"""from Clase_Jugador import Jugador
+from Clase_Equipo import Equipo
+from Clase_Torneo import Torneo"""
+"""
+torneo = Torneo("Champions League")
 
 
-class Jugador:
-    def __init__(self, nombre: str, numero: int, goles: int = 0):
-        self._nombre = nombre
-        self._numero = numero
-        self._goles = goles
-
-    @property
-    def nombre(self):
-        return self._nombre
-
-    @property
-    def numero(self):
-        return self._numero
-
-    @property
-    def goles(self):
-        return self._goles
-
-    def anotar_goles(self, no_goles: int):
-        self._goles += no_goles
-
-    def __str__(self):
-        return f"Jugador: {self._nombre}, Número: {self._numero}, Goles: {self._goles}"
+print("-- Bienvenido al torneo: Champions League.  --\n")
+print("1. Crear nuevo jugador.")
+print("2. Crear nuevo equipo.")
+print("3. Ver lista de jugadores.")
+print("4. Ver lista de equipos.")
+print("5. Agregar jugadores a algún equipo.")
+print("6. Eliminar jugadores de un equipo.")
+print("7. Agregar equipos al torneo.")
+print("8. Eliminar equipos del torneo.")
+print("9. Anotar gol(es) a un jugador.")
+print("10. Conocer el número total de goles de los equipos.")
+print("11. Generar rol de juegos.")
+print("0. Salir.\n")
+opcion = int(input("Por favor, ingresa una de las opciones anteriores:"))
+#validar si lo que me den sea numero valido o no cadena
 
 
-class Equipo:
-    _id = 0
+while opcion != 0:
+    if opcion == 0:
+        print("Gracias =)")
+    elif opcion == 1:
+        #Jugador
+        lista_jugadores = Equipo["Lista jugadores"]
+        nombre = input("Ingresa el nombre del jugador: ")
+        numero = int(input("Ingresa el número: "))
+        goles = int(input("Ingresa el número de goles: "))
+        while bool(nombre) and bool(numero) and bool(goles):
+            #validar
+            jugador1 = Jugador(nombre, numero, goles)
+            lista_jugadores.agregar_jugadores(jugador1)
 
-    def __init__(self, nombre: str, *jugadores: tuple[Jugador]):
-        self._id_equipo = Equipo._id
-        Equipo._id += 1
-        self._nombre = nombre
-        self._jugadores = list(jugadores)
+        nombre = input("Ingresa el nombre del jugador: ")
+        numero = int(input("Ingresa el numero: "))
+        goles = int(input("Ingresa el número de goles: "))
 
-    @property
-    def nombre(self):
-        return self._nombre
+    elif opcion == 2:
+        #Equipo
+        lista_equipo = Torneo["Lista equipo"]
+        equipo_nombre = input("Ingresa el nombre del equipo o enter para terminar: ")
 
-    @property
-    def id_equipo(self):
-        return self._id_equipo
+        while bool(equipo_nombre):
+            mi_equipo = Equipo(mi_equipo)
+            lista_equipo.agregar_equipos(mi_equipo)
 
-    def agregar_jugadores(self, *jugadores: tuple[Jugador]):
-        self._jugadores.extend(jugadores)
+        equipo_nombre = input("Ingresa el nombre del equipo o enter para terminar: ")
 
-    def remover_jugadores(self, *jugadores: tuple[Jugador]):
-        for jugador in jugadores:
-            if jugador in self._jugadores:
-                self._jugadores.remove(jugador)
-
-    def mostrar_jugadores(self):
-        for jugador in self._jugadores:
-            print(jugador)
-
-    def total_goles(self):
-        return sum(jugador.goles for jugador in self._jugadores)
-
-    def __str__(self):
-        return f"Equipo: {self._nombre}, ID: {self._id_equipo}, Total Goles: {self.total_goles()}"
-
-
-class Torneo:
-    def __init__(self, nombre: str, *equipos: tuple[Equipo]):
-        self._nombre = nombre
-        self._equipos = list(equipos)
-
-    @property
-    def nombre(self):
-        return self._nombre
-
-    def agregar_equipos(self, *equipos: tuple[Equipo]):
-        self._equipos.extend(equipos)
-
-    def remover_equipos(self, *equipos: tuple[Equipo]):
-        for equipo in equipos:
-            if equipo in self._equipos:
-                self._equipos.remove(equipo)
-
-    def mostrar_equipos(self):
-        for equipo in self._equipos:
-            print(equipo)
-
-    def generar_rol(self):
-        # Implementar lógica para generar rol de juegos
-        pass
-
-    def __str__(self):
-        return f"Torneo: {self._nombre}, Equipos: {len(self._equipos)}"
+    elif opcion == 3:
+        #Ver lista de equpos"""

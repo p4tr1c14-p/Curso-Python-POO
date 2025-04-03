@@ -1,5 +1,3 @@
-from Clase_Equipo import Equipo
-
 class Jugador:
     def __init__(self, nombre: str, numero: int, goles: int = 0):
         self._nombre = nombre
@@ -30,8 +28,8 @@ class Jugador:
     def goles(self, goles: int) -> None:
         self._goles = goles
 
-    def anotar_goles(self, goles = int):
-        self._goles = goles
+    def anotar_goles(self, goles: int):
+        self._goles += goles
 
     def __str__(self):
         return f"Jugador: {self._nombre}, Número: {self._numero}, Goles: {self._goles}"

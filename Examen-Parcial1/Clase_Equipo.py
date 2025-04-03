@@ -3,6 +3,8 @@ from Clase_Jugador import Jugador
 class Equipo:
     _id = 0
     def __init__(self, nombre: str, *jugadores : Jugador):
+
+
         self._nombre = nombre
         self._id_equipo =  Equipo._id
         self._jugadores = list(jugadores)
